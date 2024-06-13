@@ -30,7 +30,6 @@
     </style>
 </head>
 <body>
-
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
@@ -67,37 +66,31 @@
 <!-- Products -->
 <div class="container">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 d-flex justify-content-center align-items-center">
       <div class="card">
+        <!-- Product Image -->
         <img src="https://images.unsplash.com/photo-1718002129552-a0445f9baeb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Beautiful Roses</h5>
-          <p class="card-text">$20</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
+          <!-- Product Form -->
+          <form id="productForm">
+            <!-- Product Title -->
+            <div class="form-group">
+              <label for="productTitle">Title</label>
+              <input type="text" class="form-control" id="productTitle" placeholder="Enter product title">
+            </div>
+            <!-- Product Price -->
+            <div class="form-group">
+              <label for="productPrice">Price</label>
+              <input type="text" class="form-control" id="productPrice" placeholder="Enter product price">
+            </div>
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Add Product</button>
+          </form>
         </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1718002129552-a0445f9baeb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Fresh Bouquet</h5>
-          <p class="card-text">$30</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1718002129552-a0445f9baeb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Tasty Pastries</h5>
-          <p class="card-text">$15</p>
-          <a href="#" class="btn btn-primary">Add to Cart</a>
-        </div>
-      </div>
-    </div>
+    </div>    
   </div>
+  <div class="row products-row"> </div>
 </div>
 
 <!-- Footer -->
@@ -106,8 +99,122 @@
 </footer>
 
 <!-- Bootstrap JS, Popper.js, and jQuery CDN -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sheetrock@1.2.0/dist/sheetrock.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script>
+  $(document).ready(function () {
+    sheetId = "1nrxiQx1kN_Iup_G4-8kV35yKI347YHovHsqPUtlysro"
+    keyId = "AIzaSyACcT7k6jQJY-4f8B-YJMC8KZ4orKIHRbQ"
+    var url = "https://sheets.googleapis.com/v4/spreadsheets/"+sheetId+"/?key="+keyId+"&includeGridData=true#gid=0";                                                             
+    $.ajax({
+            type: "GET",
+            url: url,
+            success: function (dataResponse, status) {
+
+            var sheet = dataResponse.sheets
+            // console.log("sheet")
+            // console.log(sheet)
+            var data = sheet[0].data
+            // console.log("data")
+            // console.log(data)
+            rowData = data[0].rowData
+            // console.log("raw data")
+            // console.log(rowData)
+
+
+                // Assuming your data is in the format of rows and columns
+              products = rowData; // Assuming the first row contains headers
+              // Loop through the products and create HTML for each
+              for (var i = 0; i < products.length; i++) { // Start from 1 to skip headers
+                productDetails = products[i];
+                // console.log("productDetails")
+                // console.log(productDetails)
+                // console.log("Columns Records")
+                // console.log(columnsRecords)
+
+                columnsRecords = productDetails.values
+                var imageUrl = null
+                var title = null
+                var price = null
+                var product = columnsRecords;
+                console.log("product")
+                console.log(product)
+
+                imageUrl = product[0].formattedValue; // Assuming first column contains image URLs
+                title = product[1].formattedValue; // Assuming second column contains titles
+                price = product[2].formattedValue //produc.formattedValue; // Assuming third column contains prices
+                // Create card HTML
+                var cardHtml = '<div class="col-md-4">';
+                cardHtml += '<div class="card">';
+                cardHtml += '<img src="' + imageUrl + '" class="card-img-top" alt="...">';
+                cardHtml += '<div class="card-body">';
+                cardHtml += '<h5 class="card-title">' + title + '</h5>';
+                cardHtml += '<p class="card-text">$' + price + '</p>';
+                cardHtml += '<a href="#" class="btn btn-primary">Add to Cart</a>';
+                cardHtml += '</div></div></div>';
+
+                // Append card HTML to the Products section
+                $('.products-row').append(cardHtml);
+                }
+
+          },
+          error: function ( error) {
+              alert("error");
+              console.log(error)
+          }
+      });
+
+
+
+      $('#productForm').submit(function (event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get product details from form inputs
+      var title = $('#productTitle').val();
+      var price = $('#productPrice').val();
+
+      // Prepare data to send to Google Sheets
+      var requestData = {
+        "values": [
+          [title, price]
+        ]
+      };
+
+      function getAccessToken(callback) {
+      gapi.auth.authorize({
+        client_id: 'YOUR_CLIENT_ID',
+        scope: 'https://www.googleapis.com/auth/spreadsheets',
+        immediate: false
+      }, function(authResult) {
+        if (authResult && !authResult.error) {
+          callback(authResult.access_token);
+        } else {
+          console.error('Error retrieving access token:', authResult.error);
+        }
+      });
+     }
+      $.ajax({
+      url: "https://sheets.googleapis.com/v4/spreadsheets/"+sheetId+"/values/data!A1:B1:append?key="+keyId,
+      type: "POST",
+      data: JSON.stringify(requestData),
+      contentType: "application/json",
+      success: function (response) {
+        console.log("Record added successfully");
+        // Optionally, you can do something after the record is added
+      },
+      error: function (error) {
+        console.error("Error adding record:", error);
+      }
+});
+      // Clear form inputs after submission
+      $('#productTitle').val('');
+      $('#productPrice').val('');
+    });
+
+  });
+</script>
 </body>
 </html>
