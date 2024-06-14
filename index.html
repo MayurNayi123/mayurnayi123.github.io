@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Shop Website</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Add your custom CSS styles here */
+        .stamp-image {
+            position: absolute;
+            top: 15px;
+            left: -30px;
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">One Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contactus.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Home Page Content -->
+<div class="container mt-4">
+  <h1 class="text-center mb-4">Welcome to One Shop</h1>
+  <!-- Tab Panels -->
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="packages-tab" data-toggle="tab" href="#packages" role="tab" aria-controls="packages" aria-selected="true">Packages</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="works-tab" data-toggle="tab" href="#works" role="tab" aria-controls="works" aria-selected="false">Works</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <!-- Packages Tab Panel -->
+    <div class="tab-pane fade show active" id="packages" role="tabpanel" aria-labelledby="packages-tab">
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1718002129552-a0445f9baeb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Package 1 Image">
+            <div class="card-body">
+              <h5 class="card-title">Package 1</h5>
+              <p class="card-text">Details about Package 1.</p>
+              <p class="card-text">Price: $100</p>
+              <p class="card-text">Date: January 1, 2022</p>
+              <!-- Button to open modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#package1Modal">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Add similar cards for other packages -->
+      </div>
+    </div>
+    <!-- Works Tab Panel -->
+    <div class="tab-pane fade" id="works" role="tabpanel" aria-labelledby="works-tab">
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <!-- List of Works -->
+          <ul class="list-group">
+            <li class="list-group-item position-relative">
+              <img src="stamp.png" alt="Success Stamp" class="stamp-image">
+              <strong>Work 1:</strong> Details
+              <span class="float-right">
+                <!-- Star icons representing the rating -->
+                <i style="font-size: 24px;" class="fa fa-star"></i>
+                <img src="star_filled.png" alt="Star" class="star-icon">
+                <img src="star_filled.png" alt="Star" class="star-icon">
+                <img src="star_filled.png" alt="Star" class="star-icon">
+                <img src="star_filled.png" alt="Star" class="star-icon">
+                <img src="star_filled.png" alt="Star" class="star-icon">
+              </span>
+              <p>Date: January 10, 2022</p>
+              <p>Package: Package 1</p>
+              <p>Price: $100</p>
+              <!-- Button to open modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#work1Modal">
+                View Details
+              </button>
+            </li>
+            <!-- Add similar list items for other works -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Package 1 -->
+<div class="modal fade" id="package1Modal" tabindex="-1" role="dialog" aria-labelledby="package1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="package1ModalLabel">Package 1 Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Add full details here -->
+          <p>Date: January 1, 2022</p>
+          <p>Price: $100</p>
+          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod lacus ac nisl hendrerit...</p>
+          <!-- Add more details as needed -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- Add additional buttons for actions if needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Work 1 -->
+  <div class="modal fade" id="work1Modal" tabindex="-1" role="dialog" aria-labelledby="work1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="work1ModalLabel">Work 1 Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Add full details here -->
+          <p>Date: January 10, 2022</p>
+          <p>Package: Package 1</p>
+          <p>Price: $100</p>
+          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod lacus ac nisl hendrerit...</p>
+          <!-- Add more details as needed -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- Add additional buttons for actions if needed -->
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Bootstrap JS CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Custom JS -->
+<script>
+    // Add your custom JavaScript code here
+</script>
+</body>
+</html>
