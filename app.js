@@ -1,6 +1,6 @@
 
-sheetId = "1nrxiQx1kN_Iup_G4-8kV35yKI347YHovHsqPUtlysro"
-keyId = "AIzaSyACcT7k6jQJY-4f8B-YJMC8KZ4orKIHRbQ"
+sheetId = "sheetId"
+keyId = "keyId"
 var url = "https://sheets.googleapis.com/v4/spreadsheets/"+sheetId+"/?key="+keyId+"&includeGridData=true#gid=0";                                                             
 $(document).ready(function () {
   getData();
@@ -26,7 +26,7 @@ $(document).ready(function () {
     data: JSON.stringify(requestData),
     contentType: "application/json",
     headers:{
-      "Authorization": "Bearer ya29.a0AXooCgvJ5nXS4p0eFnu1rgjJnt2dO99D6giSZNQGuzV1r9dsyO86yi6MwjdCjfjnD9oDyWakDbB5ed-jPC5XFcut3oz4uia7DgOldjpSLA6RJKL-xz3XN2PSVH_mhW7BYcn37sRyDjP1k0qPc13-JqOB2BoRP_hU9nITaCgYKAXYSARISFQHGX2MierfbhOZ_EkmG1od7kVdj3Q0171" 
+      "Authorization": "Bearer token" 
     },
     success: function (response) {
       console.log("Record added successfully");
