@@ -4,7 +4,7 @@ client_id = "644391230476-h959ojtkeuje2vvvjqc4ba0uvqn8d53a.apps.googleuserconten
 client_secret = "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"
 accessToken = "ya29.a0AXooCgvlN1Bi_N9VTD-eWDXlm_ZNqg9oahez8UWVO6NH_yGCXqdyi1MFpmQoWOBq4VPuZCEJclem75uo-s53Iqh7tGlG1vx4FiA8zbpF7BpOBRX2rTiqcJL8XAAuxqVtPyFoZr5WMhSnhCCxV77Qgyinw9YxEzQuuqzsaCgYKAZsSARISFQHGX2Mi7fFJKsVxifwVS6K9i3R5lQ0171"
 redirectUrl = "localhost:5500/index.html"
-var url = "https://sheets.googleapis.com/v4/spreadsheets/"+sheetId+"/?key="+keyId+"&includeGridData=true#gid=0";                                                             
+var url = "https://sheets.googleapis.com/v4/spreadsheets/1nrxiQx1kN_Iup_G4-8kV35yKI347YHovHsqPUtlysro"/?key=AIzaSyACcT7k6jQJY-4f8B-YJMC8KZ4orKIHRbQ&includeGridData=true#gid=0";                                                             
 $(document).ready(function () {
     getData();
 
