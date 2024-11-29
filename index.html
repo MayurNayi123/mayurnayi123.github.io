@@ -1,165 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One Shop Website</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
+    <meta name="description" content="7codexa - IT Solutions for Local and International Clients">
+    <title>7codexa - IT Solutions</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Add your custom CSS styles here */
-        .stamp-image {
-            position: absolute;
-            top: 15px;
-            left: -30px;
-            width: 120px;
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+            position: relative;
+            padding-top: 60px; /* Adjusted to account for the navbar */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #0066cc; /* Blue background */
+        }
+
+        .navbar-brand {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+
+        /* Light background image */
+        .background-image {
+            background-image: url('assets/logo.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Full viewport height */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hero Section Styling */
+        .hero-section {
+            background-color: rgba(0, 102, 204, 0.7); /* Blue overlay with 70% opacity */
+            color: #fff;
+            padding: 120px 0; /* Padding for hero section */
+            text-align: center;
+            position: relative;
+            z-index: 2; /* Ensures it overlays on top of the background image */
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-top: 15px;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+            position: relative;
+            z-index: 3; /* Ensures it is above the hero section */
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
+
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">One Shop</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!--<a class="navbar-brand" href="#">
+            <img src="assets/logo.jpg" alt="7codexa Logo" class="img-fluid" style="max-height: 100px;">
+        </a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<!-- Home Page Content -->
-<div class="container mt-4">
-  <h1 class="text-center mb-4">Welcome to One Shop</h1>
-  <!-- Tab Panels -->
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="packages-tab" data-toggle="tab" href="#packages" role="tab" aria-controls="packages" aria-selected="true">Packages</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="works-tab" data-toggle="tab" href="#works" role="tab" aria-controls="works" aria-selected="false">Works</a>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <!-- Packages Tab Panel -->
-    <div class="tab-pane fade show active" id="packages" role="tabpanel" aria-labelledby="packages-tab">
-      <div class="row mt-4">
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1718002129552-a0445f9baeb1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Package 1 Image">
-            <div class="card-body">
-              <h5 class="card-title">Package 1</h5>
-              <p class="card-text">Details about Package 1.</p>
-              <p class="card-text">Price: $100</p>
-              <p class="card-text">Date: January 1, 2022</p>
-              <!-- Button to open modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#package1Modal">
-                View Details
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Add similar cards for other packages -->
-      </div>
-    </div>
-    <!-- Works Tab Panel -->
-    <div class="tab-pane fade" id="works" role="tabpanel" aria-labelledby="works-tab">
-      <div class="row mt-4">
-        <div class="col-md-12">
-          <!-- List of Works -->
-          <ul class="list-group">
-            <li class="list-group-item position-relative">
-              <img src="stamp.png" alt="Success Stamp" class="stamp-image">
-              <strong>Work 1:</strong> Details
-              <span class="badge badge-success float-right">5 Stars</span>
-              <p>Date: January 10, 2022</p>
-              <p>Package: Package 1</p>
-              <p>Price: $100</p>
-              <!-- Button to open modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#work1Modal">
-                View Details
-              </button>
-            </li>
-            <!-- Add similar list items for other works -->
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- Light Background Image -->
+    <div class="background-image"></div>
 
-<!-- Modal for Package 1 -->
-<div class="modal fade" id="package1Modal" tabindex="-1" role="dialog" aria-labelledby="package1ModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="package1ModalLabel">Package 1 Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Add full details here -->
-          <p>Date: January 1, 2022</p>
-          <p>Price: $100</p>
-          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod lacus ac nisl hendrerit...</p>
-          <!-- Add more details as needed -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- Add additional buttons for actions if needed -->
-        </div>
-      </div>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Welcome to 7codexa</h1>
+        <p>Your trusted partner for IT solutions</p>
     </div>
-  </div>
-  
-  <!-- Modal for Work 1 -->
-  <div class="modal fade" id="work1Modal" tabindex="-1" role="dialog" aria-labelledby="work1ModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="work1ModalLabel">Work 1 Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <!-- Add full details here -->
-          <p>Date: January 10, 2022</p>
-          <p>Package: Package 1</p>
-          <p>Price: $100</p>
-          <p>Details: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod lacus ac nisl hendrerit...</p>
-          <!-- Add more details as needed -->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- Add additional buttons for actions if needed -->
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Bootstrap JS CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<!-- Custom JS -->
-<script>
-    // Add your custom JavaScript code here
-</script>
+    <!-- Content Section -->
+    <div class="container content-section">
+        <h2 class="text-center">About Our Company</h2>
+        <p>7codexa is an IT startup company committed to providing high-quality solutions to local and international
+            clients. We specialize in custom software development, IT consulting, cloud solutions, and digital
+            transformation. With our skilled team of developers and consultants, we aim to help businesses achieve
+            their full potential through innovative and reliable IT services.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 7codexa. All Rights Reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
