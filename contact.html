@@ -3,50 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - One Shop</title>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <meta name="description" content="Contact 7codexa - Reach Us for IT Solutions">
+    <title>Contact Us - 7codexa</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #0066cc;
+        }
+        .navbar-brand {
+            color: #fff;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffcc00;
+        }
+        .hero-section {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .content-section {
+            padding: 60px 0;
+        }
+        .footer {
+            background-color: #0066cc;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">One Shop</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about.html">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="contact.html">Contact</a>
-        </li>
-      </ul>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="assets/logo.jpg" alt="7codexa Logo" class="img-fluid" style="max-height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Contact Us</h1>
+        <p>Get in touch with 7codexa for your IT Solutions</p>
     </div>
-  </div>
-</nav>
 
-<!-- Contact Us Content -->
-<div class="container mt-4">
-  <h1 class="text-center mb-4">Contact Us</h1>
-  <p>Contact information:</p>
-  <ul>
-    <li>Email: info@example.com</li>
-    <li>Phone: +1234567890</li>
-    <li>Address: 123 Street, City, Country</li>
-  </ul>
-</div>
+    <!-- Content Section -->
+    <div class="container content-section">
+        <h2 class="text-center">We'd Love to Hear From You</h2>
+        <p>If you have any inquiries, questions, or would like to discuss a project, please reach out to us using the contact form below. We are always happy to assist our clients.</p>
+        
+        <!-- Contact Form -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<!-- Bootstrap JS CDN -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 7codexa. All Rights Reserved.</p>
+        <p>Email: contact@7codexa.com | Phone: +1 (123) 456-7890</p>
+    </div>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
